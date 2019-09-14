@@ -1,0 +1,9 @@
+- validate HTML
+- absolute and relative paths (images and links)
+- whitespace 
+- intro self
+- browsers
+- mobile browsers
+- dev tools
+- view source
+- inline vs blocklevel
