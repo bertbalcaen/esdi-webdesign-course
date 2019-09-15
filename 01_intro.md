@@ -1,3 +1,46 @@
+# Who?
+
+- Bert Balcaen
+- webdeveloper at https://rekall.be since 2001
+- bert@rekall.be
+
+# Software requirements
+
+- a browser
+- a text editor
+
+## Browsers
+
+Most popular browsers (August 2019)
+
+On desktop:
+ 
+- Chrome (Windows + Mac): 71%
+- Firefox (Windows + Mac): 9%
+- Safari (Mac only): 6%
+- rest: Edge (Windows only), Internet Explorer (Windows only), Opera (Windows + Mac), ...
+
+See https://gs.statcounter.com/browser-market-share/desktop/worldwide.
+
+On mobile:
+
+- Chrome (iOS + Android): 61% + 7% (Samsung Internet) = 68% 
+- Safari (iOS): 20%
+
+See https://gs.statcounter.com for more statistics.
+
+- Browsers are not 100% the same. There are standards for HTML, CSS and JS, but you can never be completely sure that a page will look exactly the same in all browsers.
+- Chrome for desktop is not the same as Chrome for mobile. Same with Safari.
+- You should your work in different browsers.
+- On desktop, a page should at least work in Chrome, Firefox and Safari.
+- On mobile, you should test in Chrome and Safari.
+
+## Text editor
+
+You are free to choose.
+
+Recommendation: [atom](https://atom.io)
+
 # 3 layers in a webpage
 
 A webpage is a cake with 3 layers:
