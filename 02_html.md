@@ -9,7 +9,8 @@
 - For example: `<p>` and `</p>`.
 - A start tag starts with `<` and ends with `>`.  
 - An end tag starts with `<` and ends with `/>`.
-- Tags have names, for example the name of the `<p>' tag is `p`.
+- Tags have names, for example the name of the `<p>` tag is `p`.
+- The names should be in lowercase, so `<p>` and not `<P>`.
 - Not all tags have closing tags. For example: `<br>`, a break, or a new line. Another example: `<img>`.
 
 All HTML tags: https://www.w3schools.com/tags/ref_byfunc.asp 
@@ -51,6 +52,9 @@ Elements must also be properly nested. This is wrong for example:
 ```html
 <b><i>bold and in italics</b></i>
 ```
+
+Browser are very forgiving. If you make a mistake, they will try to guess what you meant. In many cases, your page might work even if it contains errors. However, you always avoid these situations, because it will lead to frustration and confusion when you start applying CSS and JS.
+
 # Whitespace in HTML documents
 
 - Whitespace = spaces, tabs, line break (new line).
@@ -135,6 +139,24 @@ The following rules apply to HTML documents, and other files, like images, CSS, 
 
 - It's best to avoid spaces in filenames. Use a dash `-` or an underscore `_` instead. Reason: spaces are not allowed in URL's.
 - Use lowercase for filenames. Reason: the server your site is on might be case-sensitive, meaning: `Index.html` and `index.html` are two different documents. Avoid confusion by using lowercase everywhere.
+
+# URL's
+
+URL's are used for links, images, ...
+
+A URL can absolute or relative.
+
+Absolute URL's:
+
+- For example: https://google.es, https://esdi.es/img/logo.png. 
+- Start with http:// or with https://.
+- They work everywhere.
+
+Relative URL's:
+
+- For example: about_us.html, /img/logo.png, /, ../data/projects.json, ...
+- Don't start with http:// or with https://.
+- They only work in a specific place - they are relative to a document.
 
 # Basic structure of an HTML document
 
@@ -255,7 +277,7 @@ Ordered:
 - ```<img src="path_to_image" alt="alternative text for image">```
 - The `src` attribute is required.
 - Use relative paths for loading images within your website and absolute paths to link to an image on another website.
-- `alt` attribute: a textual description of the image
+- `alt` attribute: a textual description of the image. This is used by search engines (they can't understand what's in the image), by some browsers (for the visually impaired), ... 
 - You can omit the description within the `alt` attribute if the image you are using is decorative and has no 'real meaning', for example a drop shadow, a separator, ...
 - Images are inline level elements.
 
@@ -316,10 +338,36 @@ Common entities:
 - `<i>`, `<em>`
 - `<hr>`
 
-## Structual elements
+## Structural elements
 
-- `<header>`, `<footer>`
-- `<nav>`
+These are not strictly required but they can help structuring your document:
+
+- `<header>`: the top part of the page, which usually contains the main navigation, a logo, the search, ... Normally the header doesn't contains any actual content. Not to be confused with the `<head>` element.
+- `<footer>`: the bottom part of the page, which usually contains copyright info, legal disclaimers, ... This part also doesn't contain any actual content.
+- `<main>`: the actual content of the page
+
+Usually these elements are directly under the `<body>` element:
+
+```html
+<!DOCTYPE html>     
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>This is the title</title>
+    </head>
+    <body>
+        <header>
+            <!-- logo, navigation, search, ... -->
+        </header>
+        <main>
+            <!-- the actual content of a page -->
+        </main>
+        <footer>
+            <!-- credits, copyright info, ... -->
+        </footer>
+    </body>
+</html>
+```
 
 # Exercise: turn some content into a website
 
@@ -328,7 +376,7 @@ Common entities:
 - Each page should have a navigation on top, with links to the homepage, the about page, and a link to the ESDI site. The logo should also be on top of every page, and it should link to the homepage. You download the logo here: exercises/content_to_website/This is our logo.jpeg](exercises/content_to_website/This is our logo.jpeg) (right-click > save link as)
 - Each page should also have a footer, which mentions 'Made by your name here' and your email address. Your email address should be a link. 
 - The about page needs to have the text in [exercises/content_to_website/about.txt](exercises/content_to_website/about.txt) (right-click > save link as). Use the appropriate HTML elements to make the structure of the text clear.
-- 
+- Validate both HTML pages using https://validator.w3.org.
 
 # Homework
 

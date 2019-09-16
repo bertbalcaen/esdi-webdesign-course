@@ -34,6 +34,7 @@ See https://gs.statcounter.com for more statistics.
 - You should your work in different browsers.
 - On desktop, a page should at least work in Chrome, Firefox and Safari.
 - On mobile, you should test in Chrome and Safari.
+- Testing is especially important with CSS and JavaScript.
 
 ## Text editor
 

@@ -5,6 +5,7 @@
 - cms, database, templates
 - tables
 - forms
+- image formats
 
 - exercise 1
     - h1, p
@@ -16,4 +17,16 @@
         - lowercase
     - validate the document
     - replace entities
-    
+
+- questions
+    - when did you get the HTML class?
+    - did you work with HTML in the meantime?
+    - who feels comfortable with HTML?
+        - so you can create an HTML page without using Google?
+    - with CSS?
+    - who has created a website, and published it online?
+        - what did you use? all handcoded HTML, or something like WordPress
+    - who has experience with programming, like PHP, JavaScript
+- notes are available on github?
+- please follow along when I type something
+- introduce yourself?
