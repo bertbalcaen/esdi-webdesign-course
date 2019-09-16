@@ -7,18 +7,27 @@
 - HTML elements are the building blocks of HTML pages.
 - Naming is important: an element is not the same as a tag.
 
+Start and end tags: 
+
 - An element usually has a start and end tag, an opening and closing tag.
 - For example: `<p>` and `</p>`.
 - A start tag starts with `<` and ends with `>`.  
 - An end tag starts with `<` and ends with `/>`.
 - Not all tags have closing tags. For example: `<br>`, a break, or a new line. Another example: `<img>`.
 
+Tag names:
+
 - Tags have names, for example the name of the `<p>` tag is `p`.
 - The names should be in lowercase, so `<p>` and not `<P>`.
 
 Overview of all HTML tags: https://www.w3schools.com/tags/ref_byfunc.asp 
 
-You can see the HTML of a webpage by right-clicking on the page in your browser, and then select 'View page source'. 
+# Looking at the HTML of a website
+
+You can look at the HTML of any page and see how it's made:
+
+- In most browsers (Chrome, Firefox, Safari), you can right-click on an element, and then select 'Inspect element'. A panel will open and show you the source of that element.
+- You can see the entire HTML source of a webpage by right-clicking on the page in your browser, and then select 'View page source'.
 
 ## Hierarchical relations between elements
 
@@ -184,7 +193,7 @@ You can repeat `..` as many times as necessary, for example: `../../../my_page.h
 
 # Basic structure of an HTML document
 
-The is a minimal HTML page:
+This is a minimal HTML page:
 
 ```html
 <!DOCTYPE html>     
@@ -207,8 +216,8 @@ The is a minimal HTML page:
 
 ## `<html>`
 
-- The `<html>` element is the container for the whole page.
 - An HTML document contains HTML elements.
+- The `<html>` element is the container for the whole page.
 - There is a hierarchical relationship between the elements.
 - The `<html>` element is at the top of hierarchy.
 - It has two child elements: `<head>` and `<body>`.
@@ -238,12 +247,15 @@ The is a minimal HTML page:
 ## Exercise: fix a badly made HTML page
 
 - You will fix a badly made HTML document. There are many errors: invalid nesting, missing elements, ...
-- [Download the exercise](exercises/fix_incorrect_html/index.html) (Right-click and select 'Save link as')
+- [Download the exercise](https://raw.githubusercontent.com/bertbalcaen/esdi-webdesign-course/master/exercises/fix_incorrect_html/index.html) (Right-click and select 'Save link as')
 - Check if your document is valid on https://validator.w3.org.
+- Keep working on it until the validator says you have no errors and warnings.
 
 # Commonly used HTML elements
 
-## Inline vs block-level
+## Inline vs block-level elements
+
+HTML elements can be divided in 2 groups: block-level and inline. 
 
 Block-level elements:
 
@@ -260,6 +272,7 @@ Inline elements:
 ## Headings
 
 - `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
+- These are block-level elements.
 - `<h1>` = most important title
 - `<h2>` = subtitle
 - Use headings to indicate the logical levels in your text.
@@ -267,8 +280,8 @@ Inline elements:
 ## Paragraphs and breaks
 
 - `<p>This is a paragraph.<p>`
--  Use a break `<br>` to create a new line in a paragraph.
-- Paragraph are block level elements.
+- Use a break `<br>` to create a new line in a paragraph.
+- Paragraphs are block level elements.
 
 ## Lists
 
@@ -304,14 +317,16 @@ Ordered:
 - `alt` attribute: a textual description of the image. This is used by search engines (they can't understand what's in the image), by some browsers (for the visually impaired), ... 
 - You can omit the description within the `alt` attribute if the image you are using is decorative and has no 'real meaning', for example a drop shadow, a separator, ...
 - Images are inline level elements.
+- Browsers support GIF, JPEG, PNG and SVG. You will need to convert other file formats to a supported format first, or the browser will not show it.
 
 ## Links
+
 - `<a href="path_to_link">content that is looks like a  link</a>`
 - The `href` attribute is required.
 - Use relative paths for linking files within your website and absolute path to link  to external resources and websites.
 - `<a href="path_to_link" target="_blank">` 
-- Use the attribute `target="_blank"` when linking to an external website to keep your website and let the link open in a new tab or page.
-- Links are inline level elements, so you can place a link within paragraphs, headers, lists, or structural elements.
+- Use the attribute `target="_blank"` to let the link open in a new tab or page.
+- Links are inline level elements, so you can place a link within paragraphs, headers, lists, ...
 
 Example of a simple link:
 
@@ -341,33 +356,69 @@ Email links:
 ## Comments
 
 - `<!-- some comment  -->`
-- Used for your own organisation. 
-- Used to temporarily hide your markup in the browser (in debug mode).
+- Never shown by the browser.
+- You can use this to clarify the structure of your document. 
+- Useful to temporarily hide something while working on a page.
 
 ## Entities
 
 - Some characters have a special meaning.
 - For example `<` is the start of the tag.
-- We cannot use these characters directly because we would confuse the browser. We need to use 'entities'.
+- We cannot use these characters directly because we would confuse the browser. We need to use 'entities'. (They need to be 'escaped'.)
 
 Common entities:
 
-- `&gt;` for `>`
-- `&lt;` for `<`
-- `&amp;` for `&`
+- `&gt;` for `>` (`gt` stands for greater than)
+- `&lt;` for `<` (`let` stands for lesser than)
+- `&amp;` for `&` (`amp` stands for ampersand)
 
 ## Text formatting
 
-- `<b>`, `<strong>`
-- `<i>`, `<em>`
-- `<hr>`
+- `<b>`, `<strong>`: bold
+- `<i>`, `<em>`: italic
+- `<hr>`: horizontal rule
+
+## Tables
+
+Example:
+
+```html
+<table>
+    <tr>
+        <td>
+            Row 1, column 1
+        </td>
+        <td>
+            Row 1, column 2
+        </td>
+        <td>
+            Row 1, column 3
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Row 2, column 1
+        </td>
+        <td>
+            Row 2, column 2
+        </td>
+        <td>
+            Row 2, column 3
+        </td>
+    </tr>
+</table>
+```
+
+- Under the `<table>` element, create a `<tr>` for each row. `tr` = table row.
+- Inside each `<tr>`, create a `<td>` element. `td` = table data.
+- For the column titles, you can use a `<th>` instead of a `<td>`. `th` = table heading. 
 
 ## Structural elements
 
-These are not strictly required but they can help structuring your document:
+These are not required but they can help structuring your document:
 
 - `<header>`: the top part of the page, which usually contains the main navigation, a logo, the search, ... Normally the header doesn't contains any actual content. Not to be confused with the `<head>` element.
-- `<footer>`: the bottom part of the page, which usually contains copyright info, legal disclaimers, ... This part also doesn't contain any actual content.
+- `<footer>`: the bottom part of the page, which usually contains copyright info, links to social media, legal disclaimers, ... This part also doesn't contain any actual content.
 - `<main>`: the actual content of the page
 
 Usually these elements are directly under the `<body>` element:
@@ -396,12 +447,17 @@ Usually these elements are directly under the `<body>` element:
 # Exercise: turn some content into a website
 
 - You will make a mini-website with 2 pages: a homepage and an about page.
-- Create a new, empty folder for this. Create the necessary files and directories.
-- Each page should have a navigation on top, with links to the homepage, the about page, and a link to the ESDI site. The logo should also be on top of every page, and it should link to the homepage. You download the logo here: exercises/content_to_website/This is our logo.jpeg](exercises/content_to_website/This is our logo.jpeg) (right-click > save link as)
-- Each page should also have a footer, which mentions 'Made by your name here' and your email address. Your email address should be a link. 
-- The about page needs to have the text in [exercises/content_to_website/about.txt](exercises/content_to_website/about.txt) (right-click > save link as). Use the appropriate HTML elements to make the structure of the text clear.
-- Validate both HTML pages using https://validator.w3.org.
+- Create a new, empty folder for this. Create the necessary files and directories. The images should be in a separate folder.
+- Each page should have a navigation on top, with links to the homepage, the about page, and a link to the ESDI site. The logo should also be on top of every page, and it should link to the homepage. You download the logo here: [exercises/content_to_website/This is our logo.jpeg](https://raw.githubusercontent.com/bertbalcaen/esdi-webdesign-course/master/exercises/content_to_website/This%20is%20our%20logo.jpeg) (right-click > save link as).
+- Each page should also have a footer, which mentions 'Made by your name here' and your email address. Your email address should be a link. (Yes, you will duplicate some code. It's fine for now.)
+- Remember: we work with HTML only now, and HTML is for structure, not for visual display. For the moment it's fine if the logo and navigation are under each other instead of next to each other.
+- The homepage should have a list of your three favorite website. The links should work. Also include a table where you explain what HTML, CSS and JS are used for. The columns should be 'Technology' and 'Function'. There should be 3 rows, one for each technology. For 'function', choose between structure, design and interaction.
+- The about page needs to have the text in [exercises/content_to_website/about.txt](https://raw.githubusercontent.com/bertbalcaen/esdi-webdesign-course/master/exercises/content_to_website/about.txt) (right-click > save link as). Use the appropriate HTML elements to make the structure of the text clear.
+- Use proper indentation (tabs) so your code is readable. 
+- Validate both HTML pages using https://validator.w3.org. There should be no errors.
 
 # Homework
 
-- Quiz: https://www.w3schools.com/quiztest/quiztest.asp?qtest=HTML
+- HTML review: https://www.w3schools.com/html/default.asp
+- HTML quiz: https://www.w3schools.com/quiztest/quiztest.asp?qtest=HTML
+- Read through https://www.w3schools.com/css/default.asp
