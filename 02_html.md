@@ -5,15 +5,20 @@
 # Elements and tags
 
 - HTML elements are the building blocks of HTML pages.
+- Naming is important: an element is not the same as a tag.
+
 - An element usually has a start and end tag, an opening and closing tag.
 - For example: `<p>` and `</p>`.
 - A start tag starts with `<` and ends with `>`.  
 - An end tag starts with `<` and ends with `/>`.
-- Tags have names, for example the name of the `<p>` tag is `p`.
-- The names should be in lowercase, so `<p>` and not `<P>`.
 - Not all tags have closing tags. For example: `<br>`, a break, or a new line. Another example: `<img>`.
 
-All HTML tags: https://www.w3schools.com/tags/ref_byfunc.asp 
+- Tags have names, for example the name of the `<p>` tag is `p`.
+- The names should be in lowercase, so `<p>` and not `<P>`.
+
+Overview of all HTML tags: https://www.w3schools.com/tags/ref_byfunc.asp 
+
+You can see the HTML of a webpage by right-clicking on the page in your browser, and then select 'View page source'. 
 
 ## Hierarchical relations between elements
 
@@ -45,7 +50,7 @@ We can also reformat this to show the hierarchy more clearly:
 
 Now it's more clear that there are 3 levels in piece of HTML, with a hierarchy between them. This will be important later when we talk about CSS.
 
-There are rules about which sub-elements an element can have. For example, a `<p>` can contain `<b>` and `<i>` elements, but not a `<table>` element.
+There are rules about which sub-elements an element can contain. For example, a `<p>` can contain `<b>` and `<i>` elements, but not a `<table>` element.
 
 Elements must also be properly nested. This is wrong for example:
 
@@ -53,7 +58,7 @@ Elements must also be properly nested. This is wrong for example:
 <b><i>bold and in italics</b></i>
 ```
 
-Browser are very forgiving. If you make a mistake, they will try to guess what you meant. In many cases, your page might work even if it contains errors. However, you always avoid these situations, because it will lead to frustration and confusion when you start applying CSS and JS.
+Browser are very forgiving. If you make a mistake, they will try to guess what you meant. In many cases, your page might work even if it contains errors. However, you should always avoid these situations, because it will lead to frustration and confusion when you start applying CSS and JS.
 
 # Whitespace in HTML documents
 
@@ -101,15 +106,15 @@ This is correct HTML but it's not very readable. It can be rewritten as:
 </table>
 ```
 
-This is much more readable. The result in the browser will be exactly the same.
+The result in the browser will be exactly the same, but the code is much more readable.
 
-This piece of HTML has 3 levels. Each level is indented with a specific number of tabs. It's easy to see where an element is inside the structure by looking at the number of tabs in front of each element.
+This piece of HTML has 3 levels. Each level is indented with a specific number of tabs. It's easy to see where an element belongs inside the structure by looking at the number of tabs in front of each element.
 
 - level 0: `<table>`, 0 tabs
 - level 1: `<tr>` inside `<table>`, 1 tab
 - level 2: `<td>` inside `<tr>`, 2 tabs
 
-Using indentation (tabs or spaces) is absolutely not required, but it helps a lot.
+Using indentation (tabs or spaces) is not required, but it helps a lot.
 
 # Attributes
 
@@ -119,26 +124,26 @@ Using indentation (tabs or spaces) is absolutely not required, but it helps a lo
 - Attribute always have the form `name="value"`. You can also use single quotes, but double quotes is more common.
 - Attributes always appear at the start tag, never at the end tag.
 - Some attributes are required, while others are optional. For example: the `src` attribute is required for an `<img>` tag. The `width` attribute for an `<img>` is optional.
-- An element can have multiple attribute, seperated by a space. The order is never important. For example: `<img src="logo.png" width="100" height="200">`.
+- An element can have multiple attributes, separated by a space. The order is not important. For example: `<img src="logo.png" width="100" height="200">`.
 
 # Organizing files
 
-Typical directory structure of a website:
+No fixed rules. Typical directory structure of a website:
 
-- index.html -> the home page
-- another_page.html
-- img/ -> directory with images used on the site
-- css/ -> directory with stylesheets
-- js/ -> directory with JavaScript files
+- `index.html` -> the home page
+- `another_page.html`
+- `img/` -> directory with images used on the site
+- `css/` -> directory with stylesheets
+- `js/` -> directory with JavaScript files
 
 # Rules for filenames
 
-- HTML documents typically use the extension `.htm` or `.html`. The last one is more common.
+HTML documents typically use the extension `.htm` or `.html`. The last one is more common.
 
 The following rules apply to HTML documents, and other files, like images, CSS, JS, ...:
 
 - It's best to avoid spaces in filenames. Use a dash `-` or an underscore `_` instead. Reason: spaces are not allowed in URL's.
-- Use lowercase for filenames. Reason: the server your site is on might be case-sensitive, meaning: `Index.html` and `index.html` are two different documents. Avoid confusion by using lowercase everywhere.
+- Use lowercase for filenames. Reason: the server your site is on might be case-sensitive, meaning: `Index.html` and `index.html` are two different documents. This could mean that your site works on your computer, but that links and images are broken when you put it online. Avoid confusion by using lowercase everywhere.
 
 # URL's
 
@@ -148,15 +153,34 @@ A URL can absolute or relative.
 
 Absolute URL's:
 
-- For example: https://google.es, https://esdi.es/img/logo.png. 
-- Start with http:// or with https://.
-- They work everywhere.
+- For example: `https://google.es`, `https://esdi.es/img/logo.png`, `http://mysite.com/js/app.js`, ... 
+- Start with `http://` or with `https://`.
+- They work everywhere: you can move your HTML document to another directory, another server, ... and the URL will still work.
 
 Relative URL's:
 
-- For example: about_us.html, /img/logo.png, /, ../data/projects.json, ...
+- For example: `about_us.html`, `img/logo.png`, `/`, `../data/projects.json`, ...
 - Don't start with http:// or with https://.
-- They only work in a specific place - they are relative to a document.
+- They only work in a specific place - they are relative to a document. If you move the document to another directory, the links won't work anymore.
+- Advantage: relative URL's are shorter and more flexible. If you change the domain name of your site, then you have to change the relative URL's.
+
+You need to include the path to the file you want. For example, suppose you have the following directory structure:
+
+- `index.html`
+- `img/`
+    - `img/logo.png`
+
+If you want to include `logo.png` in `index.html`, you would use the URL `img/logo.png`.
+
+You can use `..` to mean 'one directory up'. For example, suppose you have this directory structure:
+
+- `welcome.html`
+- `pages/`
+    - `about.html` 
+
+If you want to link from `about.html` to `welcome.html`, you use the URL `../welcome.html`.
+
+You can repeat `..` as many times as necessary, for example: `../../../my_page.html`.
 
 # Basic structure of an HTML document
 
@@ -179,7 +203,7 @@ The is a minimal HTML page:
 
 - Necessary, but no need to worry about the details.
 - Must be on the first line.
-- Mostly needed for historical reasons.
+- Mostly needed for historical reasons. There are different version of HTML. By using this `DOCTYPE`, we tell the browser we want to use HTML 5. 
 
 ## `<html>`
 

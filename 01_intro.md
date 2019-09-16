@@ -11,6 +11,14 @@
 
 ## Browsers
 
+- There are standards for HTML, CSS and JS, but each browser implements these in their own way. You can never be completely sure that a page will look exactly the same in all browsers.
+- Chrome for desktop is not the same as Chrome for mobile. Same with Safari.
+- You should test your work in different browsers, and on different devices.
+
+- On desktop, a page should at least work in Chrome, Firefox and Safari.
+- On mobile, you should test in Chrome and Safari.
+- Testing is especially important with CSS and JavaScript.
+
 Most popular browsers (August 2019)
 
 On desktop:
@@ -27,32 +35,31 @@ On mobile:
 - Chrome (iOS + Android): 61% + 7% (Samsung Internet) = 68% 
 - Safari (iOS): 20%
 
-See https://gs.statcounter.com for more statistics.
+See https://gs.statcounter.com/browser-market-share/mobile/worldwide.
 
-- Browsers are not 100% the same. There are standards for HTML, CSS and JS, but you can never be completely sure that a page will look exactly the same in all browsers.
-- Chrome for desktop is not the same as Chrome for mobile. Same with Safari.
-- You should your work in different browsers.
-- On desktop, a page should at least work in Chrome, Firefox and Safari.
-- On mobile, you should test in Chrome and Safari.
-- Testing is especially important with CSS and JavaScript.
+See https://gs.statcounter.com for more statistics.
 
 ## Text editor
 
 You are free to choose.
 
-Recommendation: [atom](https://atom.io)
+Recommendations: 
+
+- https://atom.io
+- http://brackets.io
+- https://www.sublimetext.com
+
+Pick one editor and learn it well, especially the shortcuts.
 
 # 3 layers in a webpage
 
-A webpage is a cake with 3 layers:
+A webpage is like a cake with 3 layers:
 
 - HTML = structure
 - CSS = design
 - JavaScript = interaction
 
 Each technology has its responsibility.
-
-TODO: show how to disable JS and CSS
 
 # HTML
 
@@ -66,8 +73,7 @@ Examples:
 - `<h2>` = this is a subtitle
 - `<p>` = just a paragraph
 
-HTML is very important for machines (software, computers):
-
+- HTML is very important for machines (software, computers):
 - If HTML is used properly, a search engine (like Google) can understand the structure of the document. For example, if the search engine sees `<h1>` tags, it know that this text is important.
 
 You can easily abuse HTML and use it for design. A classic bad example is using HTML tables to make columns in the page.
