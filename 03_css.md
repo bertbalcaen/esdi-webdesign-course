@@ -4,14 +4,14 @@
 
 # CSS
 
-- Never use HTML for presentation, formatting or design - that's what CSS is for
+- Never use HTML for presentation, formatting or design - that's what CSS is for.
 - CSS = Cascading Style Sheets
-- CSS = rules defined by you that tell the browser how to display the elements in your HTML page
+- CSS = rules defined by you that tell the browser how to display the elements in your HTML page.
 - Very powerful, see for example https://www.w3schools.com/css/css_intro.asp. CSS can be used to transform an HTML document in many different forms.
 
 # What can you do with CSS?
 
-- Basic design: colors, background colors, space between elements, ...
+- Design: colors, background colors, space between elements, ...
 - Typography: fonts, ...
 - Positioning: columns, overlaying elements, ...
 
@@ -44,9 +44,7 @@ For example:
 
 # Rules
 
-So CSS files contain rules.
-
-A rule consists of:
+So CSS files contain rules. A rule consists of:
 
 - a selector
 - a declaration block, with one or more declarations between curly braces
@@ -60,35 +58,27 @@ selector {
 }
 ``` 
 
-- The selector determines to what part of the HTML document the rule will apply.
-- The declaration block is list of one or more declaration.
-- A declaration consists of the name of a property and value.
-- Properties are things like colors, padding settings, fonts, ...
-- The properties and values are separated with a colon (:). For example: `color: red`.
-- Each property and value pair has to end with a semicolon (;).
+- The *selector* determines to what part of the HTML document the rule will apply.
+- The *declaration block* is list of one or more declarations.
+- A *declaration* consists of the name of a property and value.
+- *Properties* are things like colors, padding settings, fonts, ...
+- The properties and values are separated with a *colon* (`:`). For example: `color: red`.
+- Each property and value pair has to end with a *semicolon* (`;`).
 
 For example:
 
 ```css
 p {
     color: blue;
+    background-color: red;
 }
 ``` 
 
 - The selector is `p`.
-- The declaration is everything between `{` and `}`.
-- The is one property/value pair: `color: blue;`. The property is `color`, and the value is `blue`.
+- The declaration block is everything between `{` and `}`.
+- The are two declarations: `color: blue;` and `background-color: red;`. In the first one, the property is `color`, and the value is `blue`.
 
-With multiple properties:
-
-```css
-p {
-    color: blue;
-    background: red;
-}
-``` 
-
-The order of the properties does not matter. We could have listed `background` first and the result would have been the same.
+The order of the declarations does not matter. We could have listed `background-color` first and the result would have been the same.
 
 ## Exercise: linking a CSS file to an HTML document 
 
@@ -104,7 +94,7 @@ The order of the properties does not matter. We could have listed `background` f
 
 - Even if you don't add any rules at all to a page, the browser will still apply some CSS rules.
 - Reason: the browser has a default stylesheet.
-- It sets reasonable defaults: text is in black, background is white, links are underlined an in blue, an `<h1>` will be larger than a `<p>', ...
+- It sets reasonable defaults: text is in black, background is white, links are underlined an in blue, an `<h1>` will be larger than a `<h2>`, ...
 - You can override these with your own CSS.  
 
 # Selectors
@@ -138,7 +128,7 @@ This will make all paragraphs blue.
 
 ## Inheritance
 
-If you apply a rule to an element, all the children of that element will also inherit that rule.
+If you apply a property to an element, all the children of that element will also inherit that rule.
 
 For example if you apply this CSS:
 
@@ -158,7 +148,14 @@ To this HTML:
 ...
 ``` 
 
-Then the paragraph will also be blue. Remember: HTML is like a tree structure, with hierarchical relations between elements (an element can contain other elements). The CSS you apply to a 'higher' element will also apply to the 'lower' elements.
+Then the paragraph will also be blue, because it is inside the `<body>` element.
+ 
+Remember: 
+
+- HTML is like a tree structure, with hierarchical relations between elements (an element can contain other elements). 
+- The CSS you apply to a 'higher' element will also apply to the 'lower' elements.
+
+Most CSS properties work like this: colors, fonts, ... But there are exceptions: for example margins.
 
 ### Exercise
 
@@ -195,7 +192,7 @@ h2 {
 ### Exercise
 
 - Change the default font to Arial. You can set the font like this: `font-family: Arial, sans-serif`.
-- Set the font of the headings to Courier: `font-family: Courier ,monospace`.
+- Set the font of the headings to Courier: `font-family: Courier, monospace`.
 
 ## Selecting elements inside other elements
 
@@ -233,7 +230,7 @@ For example, suppose you want to change the look of the first paragraph in this 
 </p>
 ``` 
 
-Note that we added an attribute `class="intro"` to the first paragraph. This allows us to target it with some CSS rules. For example, if we want to indent the first paragraph:
+Note that we added an attribute `class="intro"` to the first paragraph. This allows us to target it with CSS rules. For example, if we want to indent the first paragraph:
 
 ```css
 .intro {
@@ -244,7 +241,7 @@ Note that we added an attribute `class="intro"` to the first paragraph. This all
 You are free to choose the name of the class, but there are some rules:
 
 - The name can only contain letters and digits.
-- Spaces are not allowed. Spaces can be used to add multiple classes to the same element. For example: `class="intro promotional-text"` gives the element 2 classes: intro, and promotional-text.
+- Spaces are not allowed inside class names. Spaces can be used to add multiple classes to the same element. For example: `class="intro promotional-text"` gives the element 2 classes: intro, and promotional-text.
 - Use a dash `-` or and `_` to create word breaks inside a class name.
 - It's best to use structural, semantic names that have nothing to do with the visual properties of an element, for example: better `intro` rather than `big-text`, or `blue-text`. If you decide to change the color of the text later on, the name `blue-text` might become confusing. 
 
@@ -267,6 +264,28 @@ p.intro {
 ``` 
 
 This means: apply the rule to `<p>` elements that have the class intro, but not to other elements, like headings.
+
+## Pseudo-classes
+
+CSS has a few pseudo-classes. They work like classes, but you can't define them yourself. The browser automatically makes them available for you.
+
+In CSS, you target normal classes with a period, followed by the class name. Pseudo-classes are similar, but they are prefixed with a colon `:` instead of a period.
+
+For now, the only  one to remember is `:hover`. This pseudo-class is activated when you hover over an element with your mouse.
+
+For example, to change the color of a link when hovering over it:
+
+```css
+a:hover {
+    color: green;
+}
+``` 
+
+See https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes for more pseudo-classes.
+
+### Exercise
+
+Change the color of the links when hovering.
 
 ## The `id` attribute
 
@@ -336,10 +355,59 @@ What color will each element have?
 - The `<p>` elements will be blue by default, because they have a rule that is more specific than the one for `<body>`.
 - The first paragraph has an even more specific rule: a combination of the tag name and a class name. This is more specific than the general rule for paragraphs.
 
+## `<div>` and `<span>`
+
+- HTML elements are used to apply meaning to a document, for example: `<h1>` means 'important title'.
+- There are 2 elements that don't have any meaning at all: `<div>` and `<span>`.
+- A `<div>` is a block-level element. It starts on a new line.
+- A `<span>` is a inline element. It does not start on a new line.
+- These elements are tools to group content so that you can target them with CSS. You do this by adding `class` or `div` attributes.
+
+For example, let's say you want to have a border around a couple of paragraphs:
+
+```html
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+```
+
+There is not really a semantic way to group these together in HTML, so we could use a `<div>` to group them:
+
+```html
+<div class="important">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div>
+```
+
+We added a `class` attribute, so we can do this in the CSS:
+
+```css
+.important {
+    border: 1px solid black;
+}
+```
+
+A `<span>` is similar, but it works inline. For example:
+
+```html
+<p><span class="web-technology">HTML</span> and <span class="web-technology">CSS</span> are really cool.</p>
+```
+
+```css
+.web-technology {
+    font-size: 20px;
+}
+```
+
+## Exercises
+
+- Add a footer to your page using a `<div>` and a `class`. 
+- Add your name in the footer.
+- Make the text in the footer smaller.
+
 ## More exercises
 
-- https://www.w3schools.com/css/css_selectors.asp
-- 
+https://www.w3schools.com/css/css_selectors.asp
 
 # Applying CSS to HTML documents
 
@@ -391,7 +459,7 @@ Example:
 - The idea of the cascade also applies here: the most specific rule wins. An inline rule will override other, less specific rules.
 - Avoid if possible. Hard to maintain and change because CSS rules are all over the place.
 - Goes against the idea of '3 layers in a webpage': structure (HTML) and design (CSS) are too strongly connected here.
-- In theory, you should be able to change the design of a page without changing the HTML. (In practice you will probably need some minimal changes.)
+- In theory, you should be able to change the design of a page without changing the HTML. Inline styles make this a lot harder. (In practice you will probably need some minimal changes.)
 
 Example:
 
@@ -458,7 +526,7 @@ p {
 ## Property names
 
 - Examples: `font-size`, `color`, ...
-- Names are always lowercase.
+- CSS property names are always lowercase.
 - Never contain spaces. A `-`, a hyphen is used to separate words, like `font-size`.   
 
 ## Units
@@ -586,7 +654,7 @@ p {
 }
 ```
 
-Padding works in exacty the same way. Here's an example that uses both:
+Padding works in exactly the same way. Here's an example that uses both:
 
 ```css
 p {
@@ -666,3 +734,18 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 ```
+
+# Exercise: styling a website
+
+- [Go back to the last HTML exercise.](02_html.md#exercise-turn-some-content-into-a-website)
+- You can find a [solution here](exercises/content_to_website/solution).
+- Create a stylesheet in css/styles.css and connect it to both HTML pages.
+- Change the default font to a sans-serif font. You can use Arial or pick one from Google Fonts.
+- Set the font of the headings to a serif font. Again, pick Times New Roman or a font from Google Fonts.
+- Remove the underlining of the links in the header navigation (Home, About, ...). It should not affect the other links.
+- Make sure the links in the header are underline when you move the mouse over them.
+- Add border below the header.
+- Add some whitespace between above and below the main content, using padding and/or margin.
+- Add a border above the footer.
+- Make the text in the footer smaller.
+- Right-align the text in the footer.
