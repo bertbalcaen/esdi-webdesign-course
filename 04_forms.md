@@ -1,3 +1,18 @@
+# Client vs server
+
+- Forms are one of the main ingredients of web applications.
+- Web applications are split up into 2 parts: the client and the server.
+
+| | Client | Server |
+| --- | --- | --- |
+| Where? | Here, on the user's computer | There, on a computer somewhere else in the world, in a datacenter |
+| Technology | HTML, CSS, JS | PHP, Java, JS, Ruby, ... |
+
+Information can flow in both directions:
+
+- From server to client: when you open a link to a webpage in your browser, the server sends back the HTML, CSS, images, ...
+- From client to server: when you submit a form, you the send the data from your browser to the server.
+
 # An example
 
 ```html
@@ -47,12 +62,12 @@ exit;
 
 - You would need to save this as `process_contact_form.php`, and place it on a server that can handle PHP scripts. 
 - When the user clicks the submit button, the data is sent to `process_contact_form.php`. 
-- The variables `$_POST['your_name']` and `$_POST['message']` will be replace with the actual data that the user entered. Note that these correspond to the `name` attributes of the form elements.
+- The variables `$_POST['your_name']` and `$_POST['message']` will be replaced with the actual data that the user entered. Note that these correspond to the `name` attributes of the form elements.
 - After sending the mail, the user will be redirected to `thanks.html`.
 
 # Form validation
 
-This is a simplified example. In a real situation, you would make sure that `your_name` and `message` fields are not empty, and remove any type of input that could be dangerous. 
+This is a simplified example. In a real situation, you would make sure that the `your_name` and `message` fields are not empty, and remove any type of input that could be dangerous. 
 
 This is called 'form validation'. Examples are:
 
@@ -102,7 +117,7 @@ Example:
 - The value of the `action` attribute is a URL.
 - When the user submits the form, the data will be sent to that URL. The form data will be available to the program at that URL.
 - The program can then process the data. See the example above, with the PHP script that mails the form data.
-- If you omit this attribute, then the form data will be submitted to the current page. This can be usefull if you have a form inside a PHP page for example.
+- If you omit this attribute, then the form data will be submitted to the current page. This can be useful if you have a form inside a PHP page for example.
 
  ## The `method` attribute
  
@@ -129,7 +144,7 @@ Here's a simple search form:
 </form>
  ```
 
-After submitting the form, the URL in the browser's address will be:
+After submitting the form, the URL in the browser's address bar will be:
 
 ```
 search.php?search=ESDI
@@ -149,7 +164,6 @@ Example:
 ```html
 <input type="text" name="first_name">
  ```
-
 - Most form elements require a `name` attribute.
 - If you don't supply a value for it, then the form element will not be sent when the form is submitted.
 - The value is important when processing the form. In the PHP for example, the value of the element above would be available as `$_GET['first_name']` or `$_POST['first_name']`.
@@ -220,7 +234,7 @@ Example:
  ```
 
 - Used to set the maximum allowed length of the data.
-- Again, this is client-side validation, so it's not safe.
+- Again, this is client-side validation, so it's not safe to rely on this.
 
 ## The `autofocus` attribute
 
@@ -234,12 +248,12 @@ Example:
 - Be careful with this because it might confuse the user.
 - Best to only use this on pages where there is only 1 thing to do, for example a login page.
 
-## The <label> element
+## The `<label>` element
 
 - HTML is all about semantics, about using the correct elements to indicate what meaning each part has in your document.
 - Form element need labels (descriptions) so that users know what to enter where.
 - These descriptions should be inside `<label>` elements.
-- By default, browsers don't make a visual distinction for `<label>`s.
+- By default, browsers don't make a visual distinction for `<label>`s. They look like regular text.
 - But: when a user clicks on a label, the focus is placed inside the corresponding form element. It also helps visually impaired people to understand how they have to complete a form. 
 
 A common usage is to wrap the description + the form element itself inside a `<label>` element. Example:
@@ -348,6 +362,7 @@ Additional attributes:
 
 - Same as a normal text field, but the characters are masked as circles.
 - You should use this for all passwords. 
+- This only protection you get is that people can't read the password when they look at the screen. It doesn't the field safer in other ways.
 
 ## An email field
 
