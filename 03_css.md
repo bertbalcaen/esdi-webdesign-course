@@ -743,7 +743,7 @@ body {
 - Change the default font to a sans-serif font. You can use Arial or pick one from Google Fonts.
 - Set the font of the headings to a serif font. Again, pick Times New Roman or a font from Google Fonts.
 - Remove the underlining of the links in the header navigation (Home, About, ...). It should not affect the other links.
-- Make sure the links in the header are underline when you move the mouse over them.
+- Make sure the links in the header are underlined when you move the mouse over them.
 - Add border below the header.
 - Add some whitespace between above and below the main content, using padding and/or margin.
 - Add a border above the footer.
