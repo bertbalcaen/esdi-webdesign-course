@@ -362,7 +362,7 @@ Additional attributes:
 
 - Same as a normal text field, but the characters are masked as circles.
 - You should use this for all passwords. 
-- This only protection you get is that people can't read the password when they look at the screen. It doesn't the field safer in other ways.
+- The only protection you get is that people can't read the password when they look at the screen. It doesn't the field safer in other ways.
 
 ## An email field
 
