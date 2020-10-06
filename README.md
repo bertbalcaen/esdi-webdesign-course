@@ -1,4 +1,4 @@
-# ESDI: HTML, CSS & JS
+# ESDI: Frontend development
 
 ## Notes
 
@@ -6,11 +6,10 @@ https://github.com/bertbalcaen/esdi-webdesign-course
 
 ## Contents
 
-1. [Intro](01_intro.md)
-2. [HTML](02_html.md)
-3. [CSS](03_css.md)
-4. [Forms](04_forms.md)
-5. [Foundation](05_foundation.md)
+1. [Intro](intro.md)
+1. [Browsers](browsers.md)
+1. [Layers in a webpage](layers.md)
+1. [HTML](html.md)
 
 ## Teacher
 
