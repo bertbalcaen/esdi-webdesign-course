@@ -3,7 +3,7 @@
 - Used to view webpages.
 - Can do many more things: play back video and audio, 3D, realtime voice and video chat, ...
 - Very complex and costly to develop.
-- Only a few big companies like can afford to develop a browser: Google, Microsoft, Apple, Firefox, ...
+- Only a few big companies like can afford to develop a browser: Google, Microsoft, Apple, Mozilla, ...
 
 ## Desktop
 
@@ -42,8 +42,8 @@ See https://gs.statcounter.com/browser-market-share/mobile/worldwide.
 - 2 browsers can show the same page in a different way.
 - Back in the 90's and 2000's, there were big problems with compatibility between browsers.
 - Some sites only worked properly in a specific browser.
-- An organization was formed: the Word Wide Web Consortium, the W3C.
-- W3C is A non-profit organization, representative from all the companies that make browsers.
+- An organization was formed: the Word Wide Web Consortium, the W3C. See https://www.w3.org.
+- W3C is a non-profit organization, with representatives from all the companies that make browsers.
 - W3C develops standards for browser technology.
 - For example: HTML, CSS animations, ...
 - A standard is just a theoretical description of how something is supposed to work.
