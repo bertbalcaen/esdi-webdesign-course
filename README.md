@@ -11,6 +11,7 @@ https://github.com/bertbalcaen/esdi-webdesign-course
 1. [Layers in a webpage](layers.md)
 1. [HTML](html.md)
 1. [CSS](css.md)
+1. [Forms](forms.md)
 
 ## Teacher
 
