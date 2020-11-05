@@ -824,7 +824,7 @@ By default, block-level elements will take up as much space as they can.
 For example:
 
 ```html
-<ul class="main-nav">
+<ul>
     <li>
         Home
     </li>
@@ -853,6 +853,8 @@ This is a larger topic, so we only do a quick intro here. More info:
 - Flex: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox 
 - CSS grid: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox 
 
+## Flexbox
+
 Here's a quick example:
 
 ```css
@@ -869,6 +871,24 @@ Now our `<ul>` will use Flexbox layout. By default this means:
 You can control what happens with the remainin space using the `justify-content` property. 
 
 For example: `justify-content: space-between` will put the remaining space in the middle.
+
+## CSS grid
+
+Flexbox is great when the number of items is unknown. It will adapt to the situation.
+
+If you want more precise control, you can use CSS grid.  
+
+Here's a quick example:
+
+```css
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+```
+
+This will create 3 columns of equal size.
 
 # Exercise: styling a website
 
