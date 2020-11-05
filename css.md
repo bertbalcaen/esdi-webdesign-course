@@ -478,6 +478,7 @@ Colors can be expressed in many different ways:
 
 - Hexadecimal: probably the most common
 - RGB
+- HSL
 - Color names like lime, red, ...
 - And a series of less used methods, like CMYK, HSV, ...
 
@@ -502,6 +503,20 @@ p {
     background-color: rgb(255, 255, 0);
 }
 ```
+
+Transparency: 
+
+- `rgb(red, green, blue, alpha)`
+- `alpha` between 0 (completely transparent) and 1 (not transparent)
+
+### HSL
+
+- HSL = hue, saturation, luminance.
+- hue = the color
+- luminance = amount of white
+- saturation = amount of grey  
+- Syntax: `hsl(hue, luminance, saturation)`.
+- With alpha: `hsl(hue, luminance, saturation, alpha)`.
 
 ### Hexadecimal values
 
@@ -545,12 +560,79 @@ The font size is expressed in pixels here. `px` is the symbol for the pixels uni
 
 Common units with their symbols:
 
-- percentages: `%`
 - pixels: `px`
-- ems: `em`
 - rems: `rem`
+- ems: `em`
+- characters: `ch`
+- percentages: `%`
 
 You can also use `cm` (centimeter) and other units, but these don't make much sense when designing for screens.
+
+### `px`
+
+- absolute unit (most others are relative)
+- useful for borders: `border: 1px solid black`
+- avoid for `font-size`, because then the user doesn't have control over the font size anymore  
+
+### `rem`
+
+- relative to the body font size
+- `1rem` = body font size
+- `2rem` = 2 x body font size
+- very common
+- define body font size in `px`, and then use `rem` for others
+
+For example:
+
+```css
+body {
+    font-size: 16px; 
+}
+
+/* h1's will be 16px x 2 = 32px */
+h1 {
+    font-size: 2rem;     
+}
+
+/* h2's will be 16px x 1.5 = 24px */
+h2 {
+    font-size: 1.5rem;     
+}
+
+/* elements with class small-text will be 16px x 0.8 = 12.8px */
+.small-text {
+    font-size: 0.8rem;     
+}
+```
+ 
+### `em`
+ 
+- like `rem`, but relative to parent instead of to body
+- common, but can be confusing: if you change the font-size of an element, then all the descendants will change too
+
+For example:
+
+```css
+main {
+    font-size: 16px;     
+}
+
+/* p's inside main will be 16px x 0.5 = 8px */
+main p {
+    font-size: 0.5em;
+}
+```
+
+### `ch`
+
+- relative to the average width of a character
+- usefull to limit text width
+
+```css
+p {
+    max-width: 60ch;
+}
+```
 
 ## Comments
 
