@@ -12,6 +12,7 @@ https://github.com/bertbalcaen/esdi-webdesign-course
 1. [HTML](html.md)
 1. [CSS](css.md)
 1. [Forms](forms.md)
+1. [Project](project.md)
 
 ## Teacher
 

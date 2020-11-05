@@ -817,6 +817,59 @@ body {
 }
 ```
 
+# Layout
+
+By default, block-level elements will take up as much space as they can.
+
+For example:
+
+```html
+<ul class="main-nav">
+    <li>
+        Home
+    </li>
+    <li>
+        About us
+    </li>
+    <li>
+        ESDI
+    </li>
+</ul>
+```
+
+The `<li>` items will be shown under each other, because they are block level elements, so they take up a whole 'line'.
+
+You can change this default behaviour using the `display` property. 
+
+2 important options are:
+
+- Flexbox layout: `display: flex;`
+- CSS Grid layout: `display: grid;`
+
+`flex` and `grid` are two different ways to have more control over how elements are laid out on the page.
+
+This is a larger topic, so we only do a quick intro here. More info:
+
+- Flex: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox 
+- CSS grid: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox 
+
+Here's a quick example:
+
+```css
+ul {
+    display: flex;
+}
+```
+
+Now our `<ul>` will use Flexbox layout. By default this means:
+
+- It's children will be sized automatically. They will be put in a row.
+- If there's space left, it will be on the right.
+
+You can control what happens with the remainin space using the `justify-content` property. 
+
+For example: `justify-content: space-between` will put the remaining space in the middle.
+
 # Exercise: styling a website
 
 - [Go back to the last HTML exercise.](02_html.md#exercise-turn-some-content-into-a-website)
@@ -831,3 +884,5 @@ body {
 - Add a border above the footer.
 - Make the text in the footer smaller.
 - Right-align the text in the footer.
+- Give the navigation in the header a class. Use that class to make the navigation horizontal. Remove the default bullets, padding and margin and make the navigation look good.
+- Make sure the logo aligns to the left, and the navigation to the right.

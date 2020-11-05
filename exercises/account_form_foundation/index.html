@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My account</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <h1>My account</h1>
+
+        <form action="save_form_data.php" method="post" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>Basic info</legend>
+
+                <label>
+                    * First name
+                    <input type="text" name="first_name" value="Bert" required>
+                </label>
+
+                <label>
+                    * Last name
+                    <input type="text" name="last_name" value="Balcaen" required>
+                </label>
+                <label>
+                    * Email
+                    <input type="text" name="email" value="bert@rekall.be" required>
+                </label>
+
+                <label>
+                    * Year of birth
+                    <input type="number" name="yob" required min="1900" max="2050">
+                </label>
+
+                <fieldset>
+                    <legend>
+                        * Gender
+                    </legend>
+                    <label>
+                        <input type="radio" name="gender" value="female" required>
+                        Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male" required checked>
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="other" required>
+                        Other
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="not_saying" required>
+                        I'd rather not say
+                    </label>
+                </fieldset>
+
+                <label>
+                    * Country
+                    <select name="country">
+                        <option value="">Choose</option>
+                        <option value="ES">Spain</option>
+                        <option value="PT">Portugal</option>
+                        <option value="GR">Greece</option>
+                        <option value="BE" selected>Belgium</option>
+                    </select>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional info</legend>
+
+                <label>
+                    Website
+                    <input type="url" name="website">
+                </label>
+
+                <label>
+                    <textarea name="bio" rows="5" cols="60">Lorem ipsum</textarea>
+                </label>
+
+                <fieldset>
+                    <legend>
+                        Interests
+                    </legend>
+                    <label>
+                        <input type="checkbox" name="interests[]" value="art">
+                        Art
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests[]" value="design" checked>
+                        Design
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests[]" value="photography">
+                        Photography
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests[]" value="music" checked>
+                        Music
+                    </label>
+                </fieldset>
+
+            </fieldset>
+
+            <fieldset>
+                <label>
+                    Password
+                    <br>
+                    <input type="password" name="password">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <label>
+                    Profile picture
+                    <br>
+                    <input type="file" name="profile_pic">
+                </label>
+            </fieldset>
+
+            <input type="submit" value="Save" class="button">
+
+        </form>
+
+    </div>
+
+</body>
+</html>

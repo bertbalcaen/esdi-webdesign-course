@@ -1,0 +1,46 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+
+h1, h2 {
+    font-family: "Times New Roman", serif;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header {
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 6rem;
+}
+
+ul.main-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.main-nav li {
+    margin-right: 1rem;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+    padding: 10px 0;
+    font-size: 10px;
+    text-align: right;
+}
+
