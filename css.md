@@ -513,10 +513,10 @@ Transparency:
 
 - HSL = hue, saturation, luminance.
 - hue = the color
-- luminance = amount of white
 - saturation = amount of grey  
-- Syntax: `hsl(hue, saturation, luminance)`.
-- With alpha: `hsl(hue, saturation, luminance, alpha)`.
+- luminance = amount of white
+- Syntax: `hsl(hue, luminance, saturation)`.
+- With alpha: `hsl(hue, luminance, saturation, alpha)`.
 
 ### Hexadecimal values
 
